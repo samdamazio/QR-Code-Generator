@@ -3,26 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <title>QR Code Generator</title>
-  <!-- Biblioteca QRCode.js a partir do CDN -->
+  <!-- Importação do Google Fonts para uma tipografia moderna -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <!-- Biblioteca QRCode.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+      width: 350px;
+    }
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      color: #2c3e50;
+    }
+    p {
+      font-size: 1em;
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+      margin-bottom: 15px;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus {
+      border-color: #2c3e50;
+      outline: none;
+    }
+    button {
+      background: #2c3e50;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 15px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #34495e;
     }
     #qrcode {
+      margin: 20px auto;
+    }
+    .footer {
       margin-top: 20px;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <h1>Sam`s QR Code Generator</h1>
-  <p>Digite o link desejado e clique no botão para gerar o QR Code:</p>
-  <input type="text" id="link" placeholder="https://exemplo.com" size="50">
-  <button onclick="gerarQRCode()">Gerar QR Code</button>
-  
-  <div id="qrcode"></div>
-  <p>This site is supported by Ceasinha.app</p>
+  <div class="container">
+    <h1>Sam's QR Code Generator</h1>
+    <p>Digite o link desejado e clique no botão para gerar o QR Code:</p>
+    <input type="text" id="link" placeholder="https://exemplo.com">
+    <button onclick="gerarQRCode()">Gerar QR Code</button>
+    
+    <div id="qrcode"></div>
+    <p class="footer">This site is supported by Ceasinha.app</p>
+  </div>
   
   <script>
     function gerarQRCode() {
